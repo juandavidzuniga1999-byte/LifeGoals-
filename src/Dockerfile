@@ -5,7 +5,6 @@ RUN npm install --legacy-peer-deps
 COPY . .
 RUN npm run build
 
-
 FROM nginx:alpine
 COPY --from=build /app/dist/lifegoals/browser /usr/share/nginx/html
 EXPOSE 80
